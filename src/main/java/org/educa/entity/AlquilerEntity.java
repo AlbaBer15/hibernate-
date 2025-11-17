@@ -21,13 +21,18 @@ public class AlquilerEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
+    @Column(name = "id_alquiler")
     private Integer id;
-
+    @Column(name = "fecha_ini")
     private LocalDate fechaIni;
+    @Column(name = "fecha_fin")
     private LocalDate fechaFin;
     private BigDecimal precio;
+    @Column(name = "id_cliente")
     private ClienteEntity cliente;
+    @Column(name = "id_vehiculo")
     private VehiculoEntity vehiculo;
+    @Column(name = "id_seguro")
     private SeguroEntity seguro;
 
 }

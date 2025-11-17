@@ -1,15 +1,25 @@
 package org.educa.entity;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class SeguroEntity {
+@Entity
+@Table(name = "seguro")
+public class SeguroEntity implements Serializable {
+    @Serial
+    private static final long SerialValueUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_seguro")
     private Integer id;
     private String nombre;
     private String descripcion;
